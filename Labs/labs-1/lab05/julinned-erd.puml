@@ -1,0 +1,74 @@
+@startuml
+class StaffInformation{
+* Staff ID Number
+---
+* first name
+* last name 
+* phone number - mobile
+* phone number - landline
+* phone number - emergency
+* address
+* staff email address
+* salary
+* quailfications
+}
+
+class Auditions{
+* Audition Result
+--
+* audition room
+* date of booking
+* time of booking
+* staff member atending
+* audition result
+* comments
+}
+
+class Enrolments{
+* Student ID Number
+* Class
+--
+* Scholarship
+* Invoices
+* Reciepts
+* Year of enrolment
+* Specialist insturment
+* Additional instruments
+* Notes
+}
+
+class Students{
+* Student ID number
+* Audition Result //many to many 
+--
+* first name
+* last name
+* phone number
+* address
+}
+
+class InstrumentHire{
+* Student ID number
+--
+* Instrument Number
+}
+
+class ClassScheduling{
+* Class
+* Student ID Number
+--
+* Room number
+* Room size
+}
+
+class Grades{
+* Staff ID Number
+--
+* Final Grade
+* New Grade
+* Students Grade
+}
+
+Enrolments || -- 0{ ClassScheduling
+
+@enduml
